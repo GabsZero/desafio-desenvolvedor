@@ -54,7 +54,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request){
         $input = $request->all();
 
-        $customer = Product::create($input);
+        $product = Product::create($input);
 
         return response()->json([
             'success' => true,
