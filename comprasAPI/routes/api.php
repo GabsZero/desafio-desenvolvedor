@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseController;
 
 
 /*
@@ -31,4 +32,10 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::delete('product', [ProductController::class, 'destroy']);
     Route::get('product', [ProductController::class, 'index']);
     Route::get('product/get', [ProductController::class, 'show']);
+
+    Route::post('purchase', [PurchaseController::class, 'store']);
+    Route::put('purchase', [PurchaseController::class, 'update']);
+    Route::delete('purchase', [PurchaseController::class, 'destroy']);
+    Route::get('purchase', [PurchaseController::class, 'index']);
+    Route::get('purchase/get', [PurchaseController::class, 'show']);
 });
