@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomerTypeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
 
@@ -26,6 +27,8 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::put('customer', [CustomerController::class, 'update']);
     Route::delete('customer', [CustomerController::class, 'destroy']);
     Route::get('customer', [CustomerController::class, 'index']);
+
+    Route::get('customerType', [CustomerTypeController::class, 'index']);
 
     Route::post('product', [ProductController::class, 'store']);
     Route::put('product', [ProductController::class, 'update']);

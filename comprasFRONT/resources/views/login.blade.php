@@ -24,15 +24,17 @@
                             <h2 class="text-white">Sistema de Pedido de Compras</h2>
                         </div>
                         <div class="card-body">         
-                            <form action="">
+                            <form action="{{route('login.authenticate')}}" method="POST">
+                                @csrf
                                 <div class="form-group">
                                     <label for="email" class="label-login">E-mail</label>
-                                    <input type="text" class="form-control" name='email' />
+                                    <input type="text" class="form-control" value="{{ old('email') }}" name='email' />
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="label-login">Senha</label>
                                     <input type="password" class="form-control" name='password' />
                                 </div>
+                                @include('partials.feedback')
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-lg btn-outline-info" value='Login' />
                                 </div>
